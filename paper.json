@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24482904",
     "current_version": 2,
-    "doi": null,
+    "doi": "10.5281/zenodo.24482905",
     "lean_source": {
       "revision": "d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1",
       "url": "https://github.com/the-omega-institute/trureturing/blob/d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1/D5/S1/Words/Forbidden/BonaMagaRicheyExtremalFrequency.lean"
