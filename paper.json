@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 78930,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "30b3f9b97b9c898556693486274c285b0b91b4326ba17d4fdff2064b5b87c054",
+      "sha256": "30b3f9b97b9c898556693486274c285b0b91b4326ba17d4fdff2064b5b87c054"
+    },
+    "source": {
+      "bytes": 16455,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "50c4ae7c45be7f0fd607e6be1b995bcfa50309fc6da3f3108089a77796fb6f92",
+      "sha256": "50c4ae7c45be7f0fd607e6be1b995bcfa50309fc6da3f3108089a77796fb6f92"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "For Bóna, Maga and Richey's extremal-frequency question (arXiv:2606.06655v2, revised September 9, 2026, Section 5.3, p. 19), we extend the classical frequency calculations of Lekkerkerker (1951), Chang (1986) and Kovačević (2018/2019) to classify the maximizers at lengths one, two and three by exact counting and generating functions. They are 0, 00, and the pair 100,001, respectively: the first two lengths contradict the unrestricted proposal, whereas length three agrees with it. We prove the authors' reducible-word frequency identity with its necessary boundary restriction, obtain all four complementary families, and show that their candidate frequencies decrease strictly to 1/2. The comparison with all competitors at lengths at least four is separate.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 2,
+    "doi": null,
+    "lean_source": {
+      "revision": "d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1/D5/S1/Words/Forbidden/BonaMagaRicheyExtremalFrequency.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 78930,
+      "sha256": "30b3f9b97b9c898556693486274c285b0b91b4326ba17d4fdff2064b5b87c054",
+      "url": "/api/v1/collected-papers/bonamagarichey-2026-extremal-frequency/files/pdf?version=2"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-23T21:20:47.075791514Z",
+    "record": "bonamagarichey-2026-extremal-frequency",
+    "repository_name": "bonamagarichey-2026-extremal-frequency",
+    "source": {
+      "bytes": 16455,
+      "sha256": "50c4ae7c45be7f0fd607e6be1b995bcfa50309fc6da3f3108089a77796fb6f92",
+      "url": "/api/v1/collected-papers/bonamagarichey-2026-extremal-frequency/files/source?version=2"
+    },
+    "title": "Boundary corrections and a length-three extension of Bóna–Maga–Richey's extremal-frequency analysis",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-23T21:20:47.075791514Z",
+        "revision": "2",
+        "version": 2
+      }
+    ],
+    "work": "bonamagarichey-2026-extremal-frequency"
+  }
+}

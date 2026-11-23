@@ -1,0 +1,379 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{1em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Om}{\Omega}
+\title{Boundary corrections and a length-three extension of\texorpdfstring{\\}{}
+B\'ona--Maga--Richey's extremal-frequency analysis}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\\small ChronoAI Pte Ltd, Singapore}
+\date{November 16, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For B\'ona, Maga and Richey's extremal-frequency question
+(arXiv:2606.06655v2, revised September~9, 2026, Section~5.3, p.~19),
+we extend the classical frequency calculations of Lekkerkerker (1951),
+Chang (1986) and Kova\v{c}evi\'c (2018/2019) to classify the maximizers
+at lengths one, two and three by exact counting and generating functions.
+They are $0$, $00$, and the pair $100,001$, respectively: the first two
+lengths contradict the unrestricted proposal, whereas length three agrees
+with it. We prove the authors' reducible-word frequency identity with its
+necessary boundary restriction, obtain all four complementary families,
+and show that their candidate frequencies decrease strictly to $1/2$.
+The comparison with all competitors at lengths at least four is separate.
+\end{abstract}
+
+\section{The question and its short-length answer}
+For a nonempty binary word $w$ and an integer $n\geq1$, let
+\[
+ \Om_n^w=\{u\in\{0,1\}^n: w\text{ is not a contiguous factor of }u\},
+ \qquad
+ \rho_n^w=\frac{\sum_{u\in\Om_n^w}|u|_1}{n|\Om_n^w|}.
+\]
+Here $|u|_1$ counts the ones in $u$, and $\rho^w=\lim_{n\to\infty}\rho_n^w$
+when the limit exists. These are Definition~2.4 of~\cite{BMR}.
+The denominator is positive: for nonempty $w$, at least one constant binary
+word avoids $w$ at every length.
+The paper defines words for all lengths $k\geq1$ (Section~2, p.~3).
+Its Section~5.3, p.~19, proposes that forbidding $10^{k-1}$ or its reversal
+maximizes $\rho^w$ over all words of length $k$: ``forbidding the word
+$10^{k-1}$ or its reversal should maximize the frequency $\rho$''.
+Theorem~\ref{thm:boundary} supplies counterexamples at the first two lengths;
+Theorem~\ref{thm:three} proves the proposed comparison at length three.
+
+The following classification shows why a restriction on $k$ is necessary.
+The golden-mean value already follows from Lekkerkerker's 1951 theorem
+on Fibonacci representations~\cite[Stelling~B, p.~2]{L}: deleting the
+forced initial $10$ identifies representations of length $n+2$ with
+all $11$-avoiding words of length $n$, and changes the number of ones by $1$.
+St.~John~\cite[Theorem~(2)]{SJ} gives a direct proof for unrestricted first
+letters. B\'ona--Maga--Richey~\cite[Example~2.10, Eq.~(2.14)]{BMR}
+rederive the same value. We include its calculation for the extremal comparison.
+
+\begin{theorem}\label{thm:boundary}
+For one-letter forbidden words,
+$\rho_n^0=1$ and $\rho_n^1=0$ for every $n\geq1$.
+For two-letter forbidden words the limits are
+\[
+\begin{array}{c|cccc}
+ w&00&01&10&11\\ \hline
+ \rho^w&\displaystyle\frac12+\frac{1}{2\sqrt5}
+ &\displaystyle\frac12&\displaystyle\frac12
+ &\displaystyle\frac12-\frac{1}{2\sqrt5}.
+\end{array}
+\]
+Consequently the unique maximizers at lengths one and two are $0$ and $00$,
+respectively. The proposal on the full domain $k\geq1$ is false, and it
+remains false if that domain is changed to $k\geq2$.
+\end{theorem}
+
+\begin{proof}
+Avoiding $0$ leaves just $1^n$, and avoiding $1$ leaves just $0^n$.
+A word avoiding $10$ has the unique form $0^a1^{n-a}$, $0\leq a\leq n$.
+There are $n+1$ such words, containing $n(n+1)/2$ ones altogether;
+thus $\rho_n^{10}=1/2$. Reversing words preserves both avoidance and the
+number of ones, so $\rho_n^{01}=1/2$ as well.
+
+For $00$, let $A_n(y)=\sum_{u\in\Om_n^{00}}y^{|u|_1}$, including
+$A_0(y)=1$. An avoiding word is either empty, the single word $0$, or
+starts with $1$ or $01$, followed by another avoiding word. Hence
+\[
+ \sum_{n\geq0}A_n(y)t^n=\frac{1+t}{1-yt-yt^2},\qquad
+ A_1(y)=1+y,\quad A_n(y)=yA_{n-1}(y)+yA_{n-2}(y)\ (n\geq2).
+\]
+The characteristic roots are
+$\lambda_\pm(y)=(y\pm\sqrt{y^2+4y})/2$.
+For real $y$ near $1$, $\lambda_+(y)>|\lambda_-(y)|$ and
+\[
+ A_n(y)=C_+(y)\lambda_+(y)^n+C_-(y)\lambda_-(y)^n,
+ \qquad C_+(1)=\frac{\varphi^2}{\sqrt5}>0,
+\]
+where $\varphi=(1+\sqrt5)/2$ and $C_\pm$ are differentiable near $1$.
+This follows by solving the recurrence with the two displayed initial values.
+The strict root gap persists on a neighborhood of $1$; differentiating
+the explicit formula and dividing by $nA_n(1)$ therefore gives
+\[
+ \rho^{00}=\lim_{n\to\infty}\frac{A'_n(1)}{nA_n(1)}
+ =\frac{\lambda'_+(1)}{\lambda_+(1)}.
+\]
+Differentiating $\lambda_+^2-y\lambda_+-y=0$ yields
+$\lambda'_+(1)=(\varphi+1)/(2\varphi-1)$, and consequently
+\[
+ \rho^{00}=\frac{\varphi}{\sqrt5}
+ =\frac12+\frac{1}{2\sqrt5}.
+\]
+Bit-complement is a bijection from $\Om_n^{00}$ to $\Om_n^{11}$ that
+replaces $|u|_1$ by $n-|u|_1$, giving the remaining value.
+The strict inequalities in the table prove uniqueness.
+\end{proof}
+
+\section{Why the reduction changes at length two}
+Section~3.1, p.~8, of~\cite{BMR} observes that forbidding $10^m$ has the same
+limiting letter frequency as forbidding $0^m$.
+The following argument establishes that observation for $m\geq2$ and
+identifies its exceptional boundary. Its frequency formula also gives the
+candidate value in the longer-length extremal question.
+The constant-word frequencies were computed by Chang~\cite[p.~179]{C}
+and later by Baril--Kirgizov--Vajnovszki~\cite[Theorem~1]{BKV}.
+The three-word identity below also follows from
+Kova\v{c}evi\'c~\cite[Lemmas~1(b), 2 and Remark~4]{K}:
+set the run parameters to $(d,k)=(0,m-1)$; his typical relative weight
+is $f_m$, and his boundary observation allows either end run to be free.
+Concentration of a variable in $[0,1]$ implies convergence of its mean.
+The proof below gives a direct generating-function derivation.
+
+\begin{proposition}\label{prop:reduction}
+Let $m\geq2$, and let $r_m\in(0,1)$ be the unique positive solution of
+$r_m+r_m^2+\cdots+r_m^m=1$. Then
+\[
+ \rho^{10^m}=\rho^{0^m1}=\rho^{0^m}
+ =\frac{1}{\sum_{i=1}^m i r_m^i}.
+\]
+For $m=1$, instead, $\rho^{10}=\rho^{01}=1/2$ while $\rho^0=1$.
+\end{proposition}
+
+\begin{proof}
+Write $S_m(t)=1+t+\cdots+t^{m-1}$ and use $y$ to mark ones.
+Every word avoiding $0^m$ is a sequence of blocks $0^a1$,
+$0\leq a<m$, followed by $0^b$, $0\leq b<m$. Thus its generating function is
+\[
+ F_m(t,y)=\frac{S_m(t)}{1-ytS_m(t)}.
+\]
+Every word avoiding $10^m$ is either entirely zero or uniquely consists
+of an arbitrary initial zero string, a first $1$, and a suffix avoiding $0^m$.
+Indeed, a run of at least $m$ zeros after the first $1$ has an immediately
+preceding $1$ and creates the forbidden factor. The converse is immediate.
+Therefore
+\[
+ G_m(t,y)=\frac{1+ytF_m(t,y)}{1-t}
+ =\frac{1}{(1-t)(1-ytS_m(t))}.
+\]
+
+For $m\geq2$ and positive $y$ near $1$, the polynomial
+$D_m(t,y)=1-y\sum_{i=1}^m t^i$ has a unique positive zero $r(y)<1$.
+It is simple since $\partial_tD_m(r(y),y)<0$.
+There is no other zero with modulus at most $r(y)$: the triangle inequality
+would force equality in
+$1\leq y\sum_{i=1}^m |t|^i\leq y\sum_{i=1}^m r(y)^i=1$,
+and equality for the terms $t$ and $t^2$ forces $t=r(y)$.
+Both generating functions have a simple pole there, with nonzero numerator;
+the extra pole of $G_m$ at $t=1$ is farther away.
+
+Partial fractions, as in~\cite[Theorem~IV.9, p.~256]{FS}, now give,
+for each of $F_m$ and $G_m$, coefficients
+$C(y)r(y)^{-n}$ plus terms exponentially smaller relative to this one,
+uniformly near $y=1$, also after one $y$ derivative.
+To justify the uniform assertion, choose a circle of radius strictly between
+$r(1)$ and the moduli of all the other poles, subtract the simple-pole term,
+and apply the coefficient bound on that circle to the remainder and its
+$y$ derivative. The positive simple-pole coefficient $C(1)$ is nonzero.
+It follows that both limiting frequencies are $-r'(1)/r_m$.
+Differentiating $y\sum_{i=1}^m r(y)^i=1$ gives
+\[
+ -\frac{r'(1)}{r_m}=\frac{1}{\sum_{i=1}^m i r_m^i}.
+\]
+Reversal proves the equality for $0^m1$.
+When $m=1$, the formulas become $F_1=(1-yt)^{-1}$ and
+$G_1=((1-t)(1-yt))^{-1}$. At $y=1$ the two poles of $G_1$ coincide;
+the explicit finite-word calculation in Theorem~\ref{thm:boundary}, rather
+than the simple-pole argument, gives $1/2$.
+\end{proof}
+
+\begin{corollary}\label{cor:families}
+Put $f_m=(\sum_{i=1}^m i r_m^i)^{-1}$ for $m\geq2$.
+Besides the identities of Proposition~\ref{prop:reduction},
+\[
+ \rho^{01^m}=\rho^{1^m0}=\rho^{1^m}=1-f_m,
+ \qquad
+ \lambda^{10^m}=\lambda^{0^m1}=\lambda^{0^m}=r_m^{-1},
+\]
+where $\lambda^w=\lim_{n\to\infty}|\Om_n^w|^{1/n}$.
+The complementary words have the same entropy. Moreover,
+$f_2>f_3>\cdots>1/2$ and $f_m\to1/2$.
+\end{corollary}
+The limit $1/2$ is also given in~\cite[Corollary~1]{BKV};
+the following argument proves strict monotonicity at the same time.
+\begin{proof}
+Bit-complement replaces frequency by its complement and preserves counts;
+reversal preserves both counts and frequency. The dominant poles in
+Proposition~\ref{prop:reduction} give the entropy identities.
+The defining root equations give $1/2<r_{m+1}<r_m\leq r_2<1$.
+Writing $D_m=\sum_{i=1}^m i r_m^i$, the two equations
+$\sum_{i=1}^m r_m^i=\sum_{i=1}^{m+1}r_{m+1}^i=1$ yield
+\[
+ D_{m+1}-D_m=
+ \sum_{i=1}^m(m+1-i)(r_m^i-r_{m+1}^i)>0.
+\]
+If $r_m\to r$, domination by $r_2^i$ gives
+$\sum_{i\geq1}r^i=1$, hence $r=1/2$.
+Domination by $i r_2^i$ then gives $D_m\to\sum_{i\geq1}i2^{-i}=2$.
+Thus $D_m$ increases strictly to $2$, proving the assertions for $f_m$.
+\end{proof}
+
+\section{The first affirmative length}
+The candidate value $\rho^{100}=f_2$ also appears in Richey's
+2024 notes~\cite[Section~2.4, Eq.~(2.50)]{R}.
+We compare it with the other six forbidden words explicitly.
+\begin{theorem}\label{thm:three}
+Among the eight forbidden binary words of length three, the unique
+maximizers are $100$ and $001$, with value
+$f_2=(1+1/\sqrt5)/2$. The unique minimizers are $011$ and $110$,
+with value $1-f_2$. More explicitly, let $r\in(1/2,1)$ be the root of
+$1-2r+r^2-r^3=0$, and put
+$h=(1-r+2r^2)/(2-2r+3r^2)$. Then
+\[
+\begin{array}{c|cccccccc}
+w&000&001&010&011&100&101&110&111\\ \hline
+\rho^w&f_3&f_2&h&1-f_2&f_2&1-h&1-f_2&1-f_3
+\end{array}
+\]
+Here $1/2<h<2/3<f_2$.
+\end{theorem}
+\begin{proof}
+Proposition~\ref{prop:reduction} and bit-complement give all entries except
+$010$ and $101$. To count words avoiding $010$, let $A,B,C$ be the generating
+functions of allowable continuations when the longest suffix that is a
+proper prefix of $010$ is respectively the empty word, $0$, or $01$.
+Again $t$ marks length and $y$ marks ones; the empty continuation contributes
+$1$ in each state. The transitions give
+\[
+ A=1+tyA+tB,\qquad B=1+tB+tyC,\qquad C=1+tyA.
+\]
+Eliminating $B,C$ gives
+\[
+ A(t,y)=\frac{1+t^2y}{1-t(1+y)+t^2y-t^3y^2}.
+\]
+At $y=1$ the denominator $P(t)=1-2t+t^2-t^3$ has derivative
+$-2+2t-3t^2<0$ on the real line and one real root $r\in(1/2,1)$.
+Its other two roots are a conjugate pair of modulus $r^{-1/2}>1$,
+since the product of its three roots is $1$.
+Thus $r$ is the simple dominant pole, the numerator is positive there,
+and the pole remains separated for $y$ near $1$.
+The coefficient and derivative argument from
+Proposition~\ref{prop:reduction}, applied to this denominator, gives
+\[
+ \rho^{010}=-\frac{r'(1)}r
+ =\frac{1-r+2r^2}{2-2r+3r^2}=h.
+\]
+The denominator $L=2-2r+3r^2$ is positive, and
+\[
+ h-\frac12=\frac{r^2}{2L}>0,\qquad
+ \frac23-h=\frac{1-r}{3L}>0.
+\]
+Bit-complement gives $\rho^{101}=1-h$.
+Finally $f_3<f_2$ by Corollary~\ref{cor:families}, while
+$f_3,h>1/2$ and all their complements are below $1/2$.
+This proves both uniqueness statements.
+\end{proof}
+
+\begin{corollary}\label{cor:alphabet}
+For an alphabet of size $N\geq2$ and a fixed target symbol $b$, avoiding
+the single symbol $b$ gives target frequency $0$ at every positive length.
+Avoiding any other single symbol gives frequency $1/(N-1)$.
+Thus the $N-1$ non-target symbols are exactly the maximizing singleton
+forbidden words.
+\end{corollary}
+\begin{proof}
+Avoiding a single symbol leaves $(N-1)^n$ words of length $n$.
+If the target remains available, each of the $n$ positions is the target
+in exactly $(N-1)^{n-1}$ such words. Otherwise it never occurs.
+\end{proof}
+
+\section{Coverage and verification}
+The comparison not established above is whether, for every $k\geq4$,
+\[
+ \rho^w\leq\frac{1}{\sum_{i=1}^{k-1}i r_{k-1}^i}
+ \qquad\text{for every }w\in\{0,1\}^k.
+\]
+Proposition~\ref{prop:reduction} computes the proposed value and
+Theorem~\ref{thm:three} proves its optimality for $k=3$.
+The short-length counterexamples do not decide the displayed comparison.
+
+\begin{center}\small
+\begin{tabular}{@{}p{.34\linewidth}p{.59\linewidth}@{}}
+\toprule
+Source item in~\cite{BMR}&Coverage\\\midrule
+Section~5.3, p.~19, unrestricted extremal proposal&Refuted (explicit
+counterexamples $k=1,2$). Proved for $k=3$; $k\geq4$ not covered.\\
+Example~2.10, p.~5, golden-mean value&Reproved; prior proof
+Lekkerkerker (1951), St.~John (1984).\\
+Section~3.1, p.~8, four reducible families&Reproved for $m\geq2$;
+prior proof Kova\v{c}evi\'c (2018/2019), constant-word case Chang (1986).
+Corrected boundary $m=1$; complementary identities and strict decrease follow above.\\
+Section~5.3, p.~19, fixed length and fixed number of ones&Length
+three is classified above. The stated range $2\leq j<k/2$ is not covered.\\
+Section~5.3, p.~19, fixed-border comparisons&Not covered.\\
+Strict decrease of $f_m$ (not posed)&Not posed; proved in
+Corollary~\ref{cor:families}. Limit previously given by Baril--Kirgizov--Vajnovszki (2021).\\
+Section~6, p.~20, larger alphabets&Singleton specialization not posed; proved in
+Corollary~\ref{cor:alphabet}; general symmetry questions not covered.\\
+Section~6, Conjecture~6.1 (balanced borders)&Separate from the
+extremal comparison; not covered.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The pinned Lean declaration
+\href{https://github.com/the-omega-institute/trureturing/blob/d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1/D5/S1/Words/Forbidden/BonaMagaRicheyExtremalFrequency.lean}
+{\texttt{BonaMagaRicheyExtremalFrequency.result}}
+states the negation of the proposal quantified over all $k\geq1$, using
+the one-letter case. In that statement, Boolean \texttt{true} denotes $1$
+and \texttt{false} denotes $0$. The two- and three-letter classifications,
+the family identities, their strict monotonicity, and the alphabet extension
+have the written proofs above.
+The accompanying \texttt{verify.py} compares exact finite-word counts and
+integer first moments with independently derived recurrences; its output
+specifies the finite ranges. These checks support the counting identities,
+whereas the infinite limits follow from the displayed proofs.
+
+\begin{thebibliography}{8}
+\bibitem{BMR}
+Mikl\'os B\'ona, Bal\'azs Maga and Jacob Richey,
+\emph{Letter frequency in shifts of finite type with one forbidden word},
+arXiv:2606.06655v2, revised September 9, 2026.
+\href{https://arxiv.org/abs/2606.06655v2}{arXiv:2606.06655v2}.
+\bibitem{L}
+C.~G.~Lekkerkerker,
+\emph{Voorstelling van natuurlijke getallen door een som van getallen van Fibonacci},
+Stichting Mathematisch Centrum, Zuivere Wiskunde ZW~30/51, 1951,
+Stelling~B, p.~2.
+\href{https://ir.cwi.nl/pub/6922}{CWI text}.
+\bibitem{SJ}
+Peter H.~St.~John,
+\emph{On the asymptotic proportions of zeros and ones in Fibonacci sequences},
+Fibonacci Quarterly \textbf{22}(2) (1984), 144--145.
+\href{https://www.fq.math.ca/Scanned/22-2/stjohn.pdf}{Journal text}.
+\bibitem{C}
+Derek K.~Chang, \emph{On Fibonacci binary sequences},
+Fibonacci Quarterly \textbf{24}(2) (1986), 178--179.
+\href{https://www.fq.math.ca/Scanned/24-2/chang2.pdf}{Journal text}.
+\bibitem{K}
+Mladen Kova\v{c}evi\'c,
+\emph{Runlength-limited sequences and shift-correcting codes: asymptotic analysis},
+IEEE Transactions on Information Theory \textbf{65}(8) (2019), 4804--4814;
+first preprint 2018, \href{https://arxiv.org/abs/1803.06117v3}{arXiv:1803.06117v3}.
+\bibitem{BKV}
+Jean-Luc Baril, Sergey Kirgizov and Vincent Vajnovszki,
+\emph{Asymptotic bit frequency in Fibonacci words},
+Pure Mathematics and Applications \textbf{30}(1) (2022), 23--30;
+first preprint 2021, \href{https://arxiv.org/abs/2106.13550v2}{arXiv:2106.13550v2}.
+\bibitem{R}
+Jacob Richey, \emph{Pattern avoidance, entropy, and hitting time},
+notes available August~12, 2024, Section~2.4, Eqs.~(2.49)--(2.54).
+\href{https://github.com/jfrichey/jfrichey.github.io/blob/846c835def30a51945bac23d8ed215b61056b87c/pagedocs/sft_patterns.pdf}{Dated author text}.
+\bibitem{FS}
+Philippe Flajolet and Robert Sedgewick,
+\emph{Analytic Combinatorics}, Cambridge University Press, 2009,
+Theorem~IV.9, p.~256.
+\href{https://algo.inria.fr/flajolet/Publications/book.pdf}{Author-hosted text}.
+\end{thebibliography}
+\medskip\noindent\small
+Copyright \textcopyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+\end{document}

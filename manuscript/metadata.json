@@ -1,0 +1,23 @@
+{
+  "id": "bonamagarichey-2026-extremal-frequency",
+  "revision": 2,
+  "problem_ids": [
+    "bonamagarichey-2026-extremal-frequency"
+  ],
+  "topic": "Extremal letter frequencies for one forbidden binary word: lengths one to three and reducible families",
+  "title": "Boundary corrections and a length-three extension of Bóna–Maga–Richey's extremal-frequency analysis",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "For Bóna, Maga and Richey's extremal-frequency question (arXiv:2606.06655v2, revised September 9, 2026, Section 5.3, p. 19), we extend the classical frequency calculations of Lekkerkerker (1951), Chang (1986) and Kovačević (2018/2019) to classify the maximizers at lengths one, two and three by exact counting and generating functions. They are 0, 00, and the pair 100,001, respectively: the first two lengths contradict the unrestricted proposal, whereas length three agrees with it. We prove the authors' reducible-word frequency identity with its necessary boundary restriction, obtain all four complementary families, and show that their candidate frequencies decrease strictly to 1/2. The comparison with all competitors at lengths at least four is separate.",
+  "summary": "The maximizing forbidden words at lengths one, two and three are 0, 00, and 001 or 100. Classical run-frequency formulas give the three reducible families and their complements; their candidate values decrease strictly to 1/2. Written proofs give these comparisons, the exceptional length-two reduction and the singleton extension to any finite alphabet. The all-competitor comparison at lengths at least four is not established by these arguments.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1/D5/S1/Words/Forbidden/BonaMagaRicheyExtremalFrequency.lean"
+}

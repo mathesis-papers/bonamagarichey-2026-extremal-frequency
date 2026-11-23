@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Boundary corrections and a length-three extension of Bóna–Maga–Richey's extremal-frequency analysis"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-23"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/bonamagarichey-2026-extremal-frequency?version=2"
+license: "CC-BY-4.0"
