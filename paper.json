@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24482904",
     "current_version": 2,
     "doi": "10.5281/zenodo.24482905",
+    "kind": "note",
     "lean_source": {
       "revision": "d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1",
       "url": "https://github.com/the-omega-institute/trureturing/blob/d4a6bd75fd78850fed8cf60aebb6ce7fceffa2e1/D5/S1/Words/Forbidden/BonaMagaRicheyExtremalFrequency.lean"
@@ -55,10 +56,12 @@
     "title": "Boundary corrections and a length-three extension of Bóna–Maga–Richey's extremal-frequency analysis",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-23T21:20:47.075791514Z",
         "revision": "2",
-        "version": 2
+        "version": 2,
+        "version_label": null
       }
     ],
     "work": "bonamagarichey-2026-extremal-frequency"
